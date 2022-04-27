@@ -58,7 +58,7 @@ try:
     startT = time()
     gpio.output(troyka, 1)
 
-    while (dec < 0.97 * 256):
+    while (dec < 0.97 * 3.3):
         
         dec = adc() / 256.0 * 3.3
         print("Adc Volage+ = {:.3} v, volage code = {}".format(dec, dec * 256 / 3.3))
@@ -67,7 +67,7 @@ try:
 
     gpio.output(troyka, 0)
 
-    while (dec > 0.02 * 256):
+    while (dec > 0.02 * 3.3):
 
         dec = adc()/ 256.0 * 3.3
         print("Adc Volage- = {:.3} v, volage code = {}".format(dec, dec * 256 / 3.3))
